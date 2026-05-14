@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import aguxpress from "@images/landing/aguxpress.png";
+const projects: {
+	title: string;
+	desc: string;
+	url: string;
+	img: ImageMetadata;
+}[] = [
+	{
+		title: "AguXpress",
+		desc: "We revamped the official AguXpress Website for their customers, in addition to other features we added.",
+		url: "https://www.aguxpress.com",
+		img: aguxpress,
+	},
+	{
+		title: "Lemon Fresh",
+		desc: "We revamped the official AguXpress Website for their customers, in addition to other features we added.",
+		url: "https://www.aguxpress.com",
+		img: aguxpress,
+	},
+	{
+		title: "Lemon Fresh",
+		desc: "We revamped the official AguXpress Website for their customers, in addition to other features we added.",
+		url: "https://www.aguxpress.com",
+		img: aguxpress,
+	},
+];
+---
+
+<section class='bg-brand-primary-01' id='projects'>
+	<div class='organized text-center'>
+		<h2 class='heading-1 text-brand-primary-07'>Portfolio</h2>
+		<p class='subtitle mt-3 mb-12'>
+			Here are some projects we have worked on so far
+		</p>
+		<ul
+			class='grid grid-cols-4 [&>*:first-child]:col-span-2 gap-12 text-start'
+		>
+			{
+				projects.map(({ title, desc, img, url }) => (
+					<li class='bg-brand-bright shadow-card hover:shadow-hover hover:bg-brand-primary-02 cursor-pointer transition duration-300 group'>
+						<div class='relative'>
+							<Image
+								src={img}
+								alt={`Screenshot of ${title} project`}
+							/>
+							<div class='bg-brand-secondary absolute inset-0 bg-brand-secondary-03/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300'>
+								<a class='btn-primary shadow-none' href={url}>
+									Visit Project
+								</a>
+							</div>
+						</div>
+						<div class='p-9'>
+							<span class='block mb-2.5 subtitle'>{title}</span>
+							<span class='block'>{desc}</span>
+						</div>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>

@@ -1,0 +1,23 @@
+---
+import logo from "@images/sudoke_logo.png";
+import { navLinks } from "@data/navigation";
+---
+
+<header
+	class='py-4 shadow-panel sticky top-0 z-1 bg-brand-bright/70 backdrop-blur-md'
+>
+	<nav class='flex items-center justify-between max-w-wide mx-auto'>
+		<a href='/'>
+			<img alt="Sudoke's Logo" src={logo.src} width={90} />
+		</a>
+		<ul class='flex gap-6'>
+			{
+				navLinks.map(({ name, href }) => (
+					<li class=''>
+						<a href={href}>{name}</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+</header>

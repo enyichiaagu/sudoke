@@ -1,5 +1,13 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+	"extends": "astro/tsconfigs/strict",
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["dist"],
+	"compilerOptions": {
+		"types": ["@sanity/astro/module"],
+		"paths": {
+			"@images/*": ["./src/images/*"],
+			"@components/*": ["./src/components/*"],
+			"@data/*": ["./src/data/*"]
+		}
+	}
 }

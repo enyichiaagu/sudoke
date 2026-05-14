@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+	--default-font-family: "Outfit", "sans-serif";
+	--font-outfit: var(--default-font-family);
+
+	/* COLORS */
+	--color-brand-bright: #f7f7f7;
+	--color-brand-neutral-02: #ccc9d5;
+	--color-brand-neutral-03: #a9a5b4;
+	--color-brand-neutral-05: #626069;
+	--color-brand-neutral-06: #3a393d;
+	--color-brand-dark: #121115;
+
+	--color-brand-primary-01: #ece5ff;
+	--color-brand-primary-02: #c5b0ff;
+	--color-brand-primary-03: #8456ff;
+	--color-brand-primary: #5823ff;
+	--color-brand-primary-05: #3c02da;
+	--color-brand-primary-06: #2d00a6;
+	--color-brand-primary-07: #1a0260;
+
+	--color-brand-secondary-03: #f1ff95;
+	--color-brand-secondary-05: #d3f10b;
+
+	/* CONTAINERS */
+	--container-wide: 80rem;
+
+	/* BREAKPOINTS */
+	--breakpoint-wide: 80rem;
+
+	/* SHADOWS */
+	--shadow-panel: 0 1px 4px 0 var(--color-brand-neutral-02);
+	--shadow-card: 0 0 20px 0
+		color-mix(in srgb, var(--color-brand-neutral-02) 25%, transparent);
+	--shadow-hover: 0 2px 6px 0 var(--color-brand-primary-02);
+
+	/* ANIMATIONS */
+	--animate-launch: launch 3s ease infinite;
+
+	@keyframes launch {
+		50% {
+			transform: translate(--spacing(2), --spacing(-5));
+		}
+	}
+}
+
+/* Need to add hover colors to links */
+@layer base {
+	a {
+		@apply hover:text-brand-primary transition duration-300;
+	}
+
+	section {
+		@apply overflow-hidden;
+	}
+}
+
+@layer components {
+	.organized {
+		@apply my-20 mx-auto max-w-wide;
+	}
+
+	.btn-primary {
+		@apply btn bg-brand-primary shadow-panel;
+
+		&:hover {
+			@apply shadow-hover bg-brand-primary-05;
+		}
+
+		&:active {
+			@apply bg-brand-primary-06;
+		}
+	}
+
+	.btn-secondary {
+		@apply btn text-brand-primary-06;
+
+		&:hover {
+			@apply bg-brand-primary-01;
+		}
+
+		&:active {
+			@apply bg-brand-primary-03;
+		}
+	}
+
+	.heading-1 {
+		@apply text-5xl/[1.1] font-medium;
+	}
+
+	.subtitle {
+		@apply text-2xl/[1.3] text-brand-neutral-06;
+	}
+}
+
+@utility underline-* {
+	@apply relative;
+
+	&::after {
+		background-color: --value(--color-*);
+		@apply content-[''] w-full h-3 absolute bottom-3 rotate-[-0.5deg] left-0 -z-1;
+	}
+}
+
+@utility btn {
+	@apply block text-base/normal tracking-[10%] uppercase py-2.5 px-7.5 w-fit font-medium text-brand-bright cursor-pointer transition;
+}
+
+* {
+	/* border: 1px solid red; */
+}

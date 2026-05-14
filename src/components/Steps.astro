@@ -1,0 +1,53 @@
+---
+import Rocket from "@images/landing/rocket.svg";
+import Dots from "@images/dots.svg";
+
+const stepsArr: { title: string; desc: string }[] = [
+	{
+		title: "Reach out to us",
+		desc: "Get in touch with us. We will discuss your business needs and what success means for a project that handles those needs",
+	},
+	{
+		title: "Get a quote",
+		desc: "After we are clear on a solution to implement, we will send you a quote and agree on a deadline and flexible payment options",
+	},
+	{
+		title: "Delivery",
+		desc: "Next, your project will be delivered to you on time, and you can highlight any corrections that we need to make",
+	},
+	{
+		title: "Maintenance",
+		desc: "Feel free to periodically reach out to improve your solution with more features, or better adapt the application to your organization's needs",
+	},
+];
+---
+
+<section class='bg-brand-primary-03'>
+	<div class='organized text-brand-bright flex gap-12'>
+		<div class='basis-5/12 shrink-0'>
+			<h2 class='heading-1 mb-3'>How It Works</h2>
+			<p class='subtitle text-brand-bright mb-12'>
+				We have a simple 4-step process
+			</p>
+			<div class='relative w-fit isolate'>
+				<Rocket class='animate-launch relative' />
+				<Dots
+					class='[&_path]:fill-brand-primary-01 absolute right-8 bottom-3 -z-1'
+				/>
+			</div>
+		</div>
+		<ul class='text-brand-dark grid grid-rows-4 gap-6'>
+			{
+				stepsArr.map(({ title, desc }, index) => (
+					<li class='shadow-card bg-brand-bright py-6 pl-6 pr-21.5 relative'>
+						<h3 class='subtitle mb-4'>{title}</h3>
+						<p>{desc}</p>
+						<span class='bg-brand-primary-02 text-brand-primary-05 heading-1 size-15.5 flex justify-center items-center absolute top-0 right-0'>
+							{index + 1}
+						</span>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>

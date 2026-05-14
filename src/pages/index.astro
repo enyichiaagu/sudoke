@@ -1,17 +1,47 @@
 ---
-
+import Navigation from "@components/Navigation.astro";
+import Hero from "@components/Hero.astro";
+import Solutions from "@components/Solutions.astro";
+import Steps from "@components/Steps.astro";
+import Portfolio from "@components/Portfolio.astro";
+import Testimonials from "@components/Testimonials.astro";
+import Contact from "@components/Contact.astro";
+import Footer from "@components/Footer.astro";
+import BackToTop from "@components/BackToTop.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
+<html lang='en' class='scroll-smooth'>
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<link rel='icon' href='/favicon.ico' />
+		<meta name='viewport' content='width=device-width' /><link
+			rel='preconnect'
+			href='https://fonts.googleapis.com'
+		/>
+		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+		<link
+			href='https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap'
+			rel='stylesheet'
+		/>
+		<meta name='generator' content={Astro.generator} />
+		<title>Sudoké | Software Development Agency</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body
+		class='text-base/normal font-normal text-brand-dark bg-brand-bright'
+		id='top'
+	>
+		<Navigation />
+		<main>
+			<Hero />
+			<Solutions />
+			<Steps />
+			<Portfolio />
+			<Testimonials />
+			<Contact />
+			<Footer />
+		</main>
+		<BackToTop />
 	</body>
 </html>

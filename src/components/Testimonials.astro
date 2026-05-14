@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import Forward from "@images/landing/forward.svg";
+import photo from "@images/landing/pfp.jpg";
+
+const testimonials: {
+	name: string;
+	position: string;
+	company: string;
+	company_url: string;
+	review: string;
+	pfp: ImageMetadata;
+}[] = [
+	{
+		name: "Tope Azeez",
+		position: "Manager",
+		company: "Lemon Fresh Services",
+		company_url: "#",
+		review: "I always recommend sudoke for any of your software needs. They simply do it best. Without them our company will not be where we are today.",
+		pfp: photo,
+	},
+	{
+		name: "Tope Azeez",
+		position: "Manager",
+		company: "Lemon Fresh Services",
+		company_url: "#",
+		review: "I always recommend sudoke for any of your software needs. They simply do it best. Without them our company will not be where we are today.",
+		pfp: photo,
+	},
+	{
+		name: "Tope Azeez",
+		position: "Manager",
+		company: "Lemon Fresh Services",
+		company_url: "#",
+		review: "I always recommend sudoke for any of your software needs. They simply do it best. Without them our company will not be where we are today.",
+		pfp: photo,
+	},
+];
+---
+
+<section class='bg-brand-primary-01' id='testimonials'>
+	<div class='organized text-center'>
+		<h2 class='heading-1 text-brand-primary-07'>Testimonials</h2>
+		<p class='subtitle mt-3 mb-12'>
+			What our clients are saying about our services
+		</p>
+		<ul class='text-start grid grid-cols-3 gap-12'>
+			{
+				testimonials.map(
+					({ company, company_url, name, pfp, position, review }) => (
+						<li class='bg-brand-bright'>
+							<div class='bg-brand-neutral-02 p-6 flex gap-6'>
+								<span class='block size-20'>
+									<Image
+										src={pfp}
+										alt={`Profile Photo of ${name}`}
+									/>
+								</span>
+								<span>
+									<span class='subtitle block'>{name}</span>
+									<span class='block'>{position}</span>
+									<span class='block'>
+										<a href={company_url}>{company}</a>
+									</span>
+								</span>
+							</div>
+							<div class='p-6'>{review}</div>
+						</li>
+					),
+				)
+			}
+		</ul>
+		<div class='mt-6 flex gap-6 justify-center'>
+			<button class='btn-primary px-2.5'
+				><Forward class='h-auto w-7 -scale-x-100' /></button
+			><button class='btn-primary px-2.5'
+				><Forward class='h-auto w-7' /></button
+			>
+		</div>
+	</div>
+</section>

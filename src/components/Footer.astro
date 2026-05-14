@@ -1,0 +1,27 @@
+---
+import { navLinks } from "@data/navigation";
+import DarkLogo from "@images/dark-logo.svg";
+---
+
+<footer class='bg-brand-dark text-brand-bright overflow-hidden relative'>
+	<div class='max-w-360 mx-auto my-10 grid grid-cols-2 gap-y-10'>
+		<div class='justify-self-start'>
+			<span class='block subtitle text-brand-bright'>Reach Out to Us</span
+			><span>business@sudoke.dev</span>
+		</div>
+		<ul class='flex gap-6 justify-self-end'>
+			{
+				navLinks.map(({ name, href }) => (
+					<li class='h-fit'>
+						<a href={href}>{name}</a>
+					</li>
+				))
+			}
+		</ul>
+		<span class='col-span-2 justify-self-center w-5xl relative top-12'
+			><DarkLogo
+				class='w-full h-auto mask-b-from-10% mask-b-to-85%'
+			/></span
+		>
+	</div>
+</footer>
