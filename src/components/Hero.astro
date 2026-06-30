@@ -1,32 +1,41 @@
 ---
-import HeroImg from "@images/hero-img.svg";
+import heroImg from "@images/hero-img.svg";
 import Dots from "@images/dots.svg";
+import { Image } from "astro:assets";
 ---
 
-<section>
-	<div class='organized flex gap-10 w-full relative'>
+<section class='sect'>
+	<!-- <div class='flex gap-10 relative sect-content'> -->
+	<div
+		class='relative sect-content grid gap-x-10 gap-y-8 md:gap-y-13 md:grid-cols-[3fr_2fr] items-start'
+	>
 		<Dots class='absolute -left-11 top-41 -z-1' />
 		<Dots class='absolute right-10 top-7 -z-1' />
-		<div class='flex flex-col gap-13'>
-			<h1 class='text-[4.3rem]/none font-medium'>
-				Improve the <span class='underline-brand-primary-02'
-					>efficiency</span
-				> of your organization with <span
-					class='underline-brand-secondary-05'>software</span
-				> solutions.
-			</h1>
-			<p class='subtitle'>
-				Sudoké is a software development agency that creates custom
-				solutions for businesses. We help you save time and improve
-				revenue.
-			</p>
-			<div class='flex gap-5'>
-				<a href='/#projects' class='btn-primary'>View our Portfolio</a
-				><a class='btn-secondary' href='/#contact'>Contact Us</a>
-			</div>
+		<!-- <div class='flex flex-col gap-13'> -->
+		<h1 class='heading-1 md:text-[4.3rem]/none'>
+			Improve the <span class='underline-brand-primary-02'
+				>efficiency</span
+			> of your organization with <span
+				class='underline-brand-secondary-05'>software</span
+			> solutions.
+		</h1>
+		<p class='subtitle'>
+			Sudoké is a software development agency that creates custom
+			solutions for businesses. We help you save time and improve revenue.
+		</p>
+		<div class='flex gap-5'>
+			<a href='/#projects' class='btn-primary'>View our Portfolio</a><a
+				class='btn-secondary'
+				href='/#contact'>Contact Us</a
+			>
 		</div>
-		<div class='basis-135 shrink-0'>
-			<HeroImg class='w-full h-auto' />
+		<!-- </div> -->
+		<div class='md:col-start-2 row-start-3 md:row-start-1 md:row-span-3'>
+			<Image
+				src={heroImg}
+				alt='Illustrated man with telescope'
+				class='w-full'
+			/>
 		</div>
 	</div>
 </section>

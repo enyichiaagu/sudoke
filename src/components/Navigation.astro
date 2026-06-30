@@ -1,23 +1,55 @@
 ---
 import logo from "@images/sudoke_logo.png";
+import Menu from "@images/menu.svg";
+import Close from "@images/close.svg";
 import { navLinks } from "@data/navigation";
 ---
 
 <header
-	class='py-4 shadow-panel sticky top-0 z-1 bg-brand-bright/70 backdrop-blur-md'
+	class='sect py-2 md:py-4 shadow-panel sticky top-0 z-1 bg-brand-bright/70 backdrop-blur-md flex justify-center'
 >
-	<nav class='flex items-center justify-between max-w-wide mx-auto'>
+	<nav class='flex items-center justify-between sect-content w-full'>
 		<a href='/'>
 			<img alt="Sudoke's Logo" src={logo.src} width={90} />
 		</a>
-		<ul class='flex gap-6'>
-			{
-				navLinks.map(({ name, href }) => (
-					<li class=''>
-						<a href={href}>{name}</a>
-					</li>
-				))
-			}
-		</ul>
+		<dialog
+			id='menu'
+			closedby='any'
+			class='inset-auto right-0 top-0 h-dvh md:h-full w-[min(40%,15rem)] p-5 bg-brand-bright'
+		>
+			<button
+				aria-label='Close Menu'
+				class='block ml-auto md:hidden'
+				onclick='menu.close()'
+			>
+				<Close class='size-9' />
+			</button>
+			<ul class='flex flex-col md:flex-row gap-6 mt-8 md:mt-0'>
+				{
+					navLinks.map(({ name, href }) => (
+						<li class='text-right'>
+							<a href={href}>{name}</a>
+						</li>
+					))
+				}
+			</ul>
+		</dialog>
+		<button
+			class='md:hidden cursor-pointer'
+			onclick='menu.showModal()'
+			aria-label='Open Navigation Bar'><Menu class='size-9' /></button
+		>
 	</nav>
 </header>
+
+<style>
+	@reference "../styles/global.css";
+
+	dialog {
+		@apply md:block md:static md:w-auto md:p-0 md:bg-inherit;
+	}
+
+	html:has(dialog[open]) {
+		@apply overflow-hidden;
+	}
+</style>

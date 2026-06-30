@@ -35,20 +35,28 @@ const testimonials: {
 		review: "I always recommend sudoke for any of your software needs. They simply do it best. Without them our company will not be where we are today.",
 		pfp: photo,
 	},
+	{
+		name: "Tope Azeez",
+		position: "Manager",
+		company: "Lemon Fresh Services",
+		company_url: "#",
+		review: "I always recommend sudoke for any of your software needs. They simply do it best. Without them our company will not be where we are today.",
+		pfp: photo,
+	},
 ];
 ---
 
 <section class='bg-brand-primary-01' id='testimonials'>
-	<div class='organized text-center'>
+	<div class='organized text-center relative'>
 		<h2 class='heading-1 text-brand-primary-07'>Testimonials</h2>
 		<p class='subtitle mt-3 mb-12'>
 			What our clients are saying about our services
 		</p>
-		<ul class='text-start grid grid-cols-3 gap-12'>
+		<ul class='text-start carousel pb-18'>
 			{
 				testimonials.map(
 					({ company, company_url, name, pfp, position, review }) => (
-						<li class='bg-brand-bright'>
+						<li class='bg-brand-bright w-98 shrink-0 snap-center'>
 							<div class='bg-brand-neutral-02 p-6 flex gap-6'>
 								<span class='block size-20'>
 									<Image
@@ -70,12 +78,58 @@ const testimonials: {
 				)
 			}
 		</ul>
-		<div class='mt-6 flex gap-6 justify-center'>
+		<!-- <div class='mt-6 flex gap-6 justify-center'>
 			<button class='btn-primary px-2.5'
 				><Forward class='h-auto w-7 -scale-x-100' /></button
 			><button class='btn-primary px-2.5'
 				><Forward class='h-auto w-7' /></button
 			>
-		</div>
+		</div> -->
 	</div>
 </section>
+
+<style>
+	@reference "../styles/global.css";
+
+	.carousel {
+		anchor-name: --carousel-anchor;
+		@apply flex gap-12 overflow-x-scroll scrollbar-none snap-x snap-mandatory scroll-smooth;
+
+		&::scroll-button(*) {
+			@apply absolute btn bg-brand-primary shadow-panel p-2.5 size-12;
+
+			position-anchor: --carousel-anchor;
+			bottom: anchor(bottom);
+			justify-self: anchor-center;
+		}
+
+		&::scroll-button(*):hover {
+			@apply shadow-hover bg-brand-primary-05;
+		}
+
+		&::scroll-button(*):active {
+			@apply bg-brand-primary-06;
+		}
+
+		&::scroll-button(*):disabled {
+			@apply bg-brand-neutral-02 shadow-none;
+		}
+
+		&::scroll-button(left),
+		&::scroll-button(right) {
+			content: "";
+			background-image: url("@images/landing/forward.svg");
+			background-position: center;
+			background-repeat: no-repeat;
+			@apply bg-size-[--spacing(7)];
+		}
+
+		&::scroll-button(left) {
+			@apply -translate-x-9 -scale-100;
+		}
+
+		&::scroll-button(right) {
+			@apply translate-x-9;
+		}
+	}
+</style>

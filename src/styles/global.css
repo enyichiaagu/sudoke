@@ -57,8 +57,14 @@
 }
 
 @layer components {
-	.organized {
-		@apply my-20 mx-auto max-w-wide;
+
+	.sect {
+		@apply px-2 md:px-10 py-12 md:py-20 flex flex-col justify-center;
+	}
+
+	.sect-content {
+		@apply max-w-wide mx-auto w-full;
+
 	}
 
 	.btn-primary {
@@ -70,6 +76,10 @@
 
 		&:active {
 			@apply bg-brand-primary-06;
+		}
+
+		&:disabled {
+			@apply bg-brand-neutral-02;
 		}
 	}
 
@@ -83,10 +93,14 @@
 		&:active {
 			@apply bg-brand-primary-03;
 		}
+
+		&:disabled {
+			@apply text-brand-neutral-02 shadow-none;
+		}
 	}
 
 	.heading-1 {
-		@apply text-5xl/[1.1] font-medium;
+		@apply md:text-5xl/[1.1] text-[2.5rem]/[1.1] font-medium;
 	}
 
 	.subtitle {
@@ -99,14 +113,14 @@
 
 	&::after {
 		background-color: --value(--color-*);
-		@apply content-[''] w-full h-3 absolute bottom-3 rotate-[-0.5deg] left-0 -z-1;
+		@apply content-[''] w-full h-[0.2em] absolute bottom-[0.17em] rotate-[-0.5deg] left-0 -z-1;
 	}
 }
 
 @utility btn {
-	@apply block text-base/normal tracking-[10%] uppercase py-2.5 px-7.5 w-fit font-medium text-brand-bright cursor-pointer transition;
+	@apply block text-nowrap text-base/normal tracking-[10%] uppercase py-2.5 px-7.5 w-fit font-medium text-brand-bright cursor-pointer transition border-none;
 }
 
 * {
-	/* border: 1px solid red; */
+	border: 1px solid red;
 }
