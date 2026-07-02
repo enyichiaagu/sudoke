@@ -5,32 +5,35 @@ import { Image } from "astro:assets";
 ---
 
 <section class='sect'>
-	<!-- <div class='flex gap-10 relative sect-content'> -->
 	<div
-		class='relative sect-content grid gap-x-10 gap-y-8 md:gap-y-13 md:grid-cols-[3fr_2fr] items-start'
+		class='relative sect-content grid gap-x-10 gap-y-10 md:gap-y-13 lg:grid-cols-[7fr_5fr] items-start'
 	>
-		<Dots class='absolute -left-11 top-41 -z-1' />
-		<Dots class='absolute right-10 top-7 -z-1' />
-		<!-- <div class='flex flex-col gap-13'> -->
-		<h1 class='heading-1 md:text-[4.3rem]/none'>
+		<h1
+			class='heading-1 md:text-[4.3rem]/none text-center lg:text-start relative'
+		>
+			<Dots class='dots bottom-0 md:-left-12 md:-bottom-10' />
 			Improve the <span class='underline-brand-primary-02'
 				>efficiency</span
 			> of your organization with <span
 				class='underline-brand-secondary-05'>software</span
 			> solutions.
 		</h1>
-		<p class='subtitle'>
+		<p class='subtitle text-center lg:text-start'>
 			Sudoké is a software development agency that creates custom
 			solutions for businesses. We help you save time and improve revenue.
 		</p>
-		<div class='flex gap-5'>
+		<div
+			class='flex flex-wrap gap-4 md:gap-5 items-center justify-center lg:justify-start'
+		>
 			<a href='/#projects' class='btn-primary'>View our Portfolio</a><a
 				class='btn-secondary'
 				href='/#contact'>Contact Us</a
 			>
 		</div>
-		<!-- </div> -->
-		<div class='md:col-start-2 row-start-3 md:row-start-1 md:row-span-3'>
+		<div
+			class='lg:col-start-2 row-start-2 lg:row-start-1 lg:row-span-3 w-17/20 max-w-75 md:max-w-100 lg:max-w-none justify-self-center md:w-full relative'
+		>
+			<Dots class='dots top-5 right-3' />
 			<Image
 				src={heroImg}
 				alt='Illustrated man with telescope'

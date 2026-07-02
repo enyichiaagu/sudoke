@@ -35,7 +35,7 @@ import { navLinks } from "@data/navigation";
 			</ul>
 		</dialog>
 		<button
-			class='md:hidden cursor-pointer'
+			class='md:hidden cursor-pointer hover:bg-brand-primary-01'
 			onclick='menu.showModal()'
 			aria-label='Open Navigation Bar'><Menu class='size-9' /></button
 		>
@@ -49,7 +49,11 @@ import { navLinks } from "@data/navigation";
 		@apply md:block md:static md:w-auto md:p-0 md:bg-inherit;
 	}
 
-	html:has(dialog[open]) {
-		@apply overflow-hidden;
+	html {
+		@apply scrollbar-gutter-stable;
+
+		&:has(dialog[open]) {
+			@apply overflow-hidden;
+		}
 	}
 </style>
