@@ -22,21 +22,24 @@ const stepsArr: { title: string; desc: string }[] = [
 ];
 ---
 
-<section class='bg-brand-primary-03'>
-	<div class='organized text-brand-bright flex gap-12'>
-		<div class='basis-5/12 shrink-0'>
+<section class='bg-brand-primary-03 sect'>
+	<div class='sect-content text-brand-bright flex'>
+		<div class='grow shrink-3'>
 			<h2 class='heading-1 mb-3'>How It Works</h2>
-			<p class='subtitle text-brand-bright mb-12'>
+			<p class='subtitle text-brand-bright'>
 				We have a simple 4-step process
 			</p>
-			<div class='relative w-fit isolate'>
-				<Rocket class='animate-launch relative' />
+			<div class='relative w-fit isolate mt-12'>
+				<Rocket class='animate-launch relative w-full' />
 				<Dots
 					class='[&_path]:fill-brand-primary-01 absolute right-8 bottom-3 -z-1'
 				/>
 			</div>
 		</div>
-		<ul class='text-brand-dark grid grid-rows-4 gap-6'>
+
+		<ul
+			class='text-brand-dark grid grid-rows-4 gap-6 basis-155 grow shrink-4'
+		>
 			{
 				stepsArr.map(({ title, desc }, index) => (
 					<li class='shadow-card bg-brand-bright py-6 pl-6 pr-21.5 relative'>

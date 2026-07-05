@@ -29,8 +29,8 @@ const cards: { name: string; desc: string; Icon: SvgComponent }[] = [
 ];
 ---
 
-<section class='bg-brand-primary-01' id='solutions'>
-	<div class='organized flex flex-col gap-12 items-center'>
+<section class='bg-brand-primary-01 sect' id='solutions'>
+	<div class='sect-content flex flex-col items-center'>
 		<div class='flex flex-col gap-3'>
 			<h2 class='heading-1 text-brand-primary-07 text-center'>
 				What We Offer
@@ -39,12 +39,12 @@ const cards: { name: string; desc: string; Icon: SvgComponent }[] = [
 				Here are the most common services we offer our clients
 			</p>
 		</div>
-		<ul class='grid grid-cols-4 gap-12'>
+		<ul class='grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:gap-12'>
 			{
 				cards.map(({ name, desc, Icon }) => (
-					<li class='bg-brand-bright p-9 shadow-card flex flex-col gap-7 items-center'>
-						<Icon class='' />
-						<span class='subtitle'>{name}</span>
+					<li class='bg-brand-bright px-3 py-5 md:p-6 lg:p-9 shadow-card flex flex-col gap-3 md:gap-4 lg:gap-7 items-center'>
+						<Icon class='h-10 md:h-auto max-w-full' />
+						<span class='subtitle text-center'>{name}</span>
 						<span class='text-center'>{desc}</span>
 					</li>
 				))
