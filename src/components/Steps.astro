@@ -23,13 +23,13 @@ const stepsArr: { title: string; desc: string }[] = [
 ---
 
 <section class='bg-brand-primary-03 sect'>
-	<div class='sect-content text-brand-bright flex'>
-		<div class='grow shrink-3'>
+	<div class='sect-content text-brand-bright flex flex-col md:flex-row'>
+		<div class='grow shrink'>
 			<h2 class='heading-1 mb-3'>How It Works</h2>
 			<p class='subtitle text-brand-bright'>
 				We have a simple 4-step process
 			</p>
-			<div class='relative w-fit isolate mt-12'>
+			<div class='relative w-fit isolate mt-12 hidden md:block'>
 				<Rocket class='animate-launch relative w-full' />
 				<Dots
 					class='[&_path]:fill-brand-primary-01 absolute right-8 bottom-3 -z-1'
@@ -38,12 +38,12 @@ const stepsArr: { title: string; desc: string }[] = [
 		</div>
 
 		<ul
-			class='text-brand-dark grid grid-rows-4 gap-6 basis-155 grow shrink-4'
+			class='text-brand-dark grid grid-rows-4 gap-4 md:gap-6 basis-155 grow shrink-2'
 		>
 			{
 				stepsArr.map(({ title, desc }, index) => (
-					<li class='shadow-card bg-brand-bright py-6 pl-6 pr-21.5 relative'>
-						<h3 class='subtitle mb-4'>{title}</h3>
+					<li class='shadow-card bg-brand-bright p-4 md:p-6 pr-19.5 md:pr-21.5 relative'>
+						<h3 class='subtitle mb-2 md:mb-4'>{title}</h3>
 						<p>{desc}</p>
 						<span class='bg-brand-primary-02 text-brand-primary-05 heading-1 size-15.5 flex justify-center items-center absolute top-0 right-0'>
 							{index + 1}
