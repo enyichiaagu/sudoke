@@ -48,16 +48,18 @@ const testimonials: {
 
 <section class='bg-brand-primary-01 sect' id='testimonials'>
 	<div class='sect-content text-center relative'>
-		<h2 class='heading-1 text-brand-primary-07'>Testimonials</h2>
-		<p class='subtitle mt-3 mb-12'>
-			What our clients are saying about our services
-		</p>
+		<div>
+			<h2 class='heading-1 text-brand-primary-07'>Testimonials</h2>
+			<p class='subtitle mt-3'>
+				What our clients are saying about our services
+			</p>
+		</div>
 		<ul class='text-start carousel pb-18'>
 			{
 				testimonials.map(
 					({ company, company_url, name, pfp, position, review }) => (
-						<li class='bg-brand-bright w-98 shrink-0 snap-center'>
-							<div class='bg-brand-neutral-02 p-6 flex gap-6'>
+						<li class='bg-brand-bright basis-17/20 max-w-75 md:max-w-none md:basis-98 shrink-0 snap-center shadow-card'>
+							<div class='bg-brand-neutral-02 p-4 md:p-6 flex gap-4 md:gap-6'>
 								<span class='block size-20'>
 									<Image
 										src={pfp}
@@ -72,7 +74,7 @@ const testimonials: {
 									</span>
 								</span>
 							</div>
-							<div class='p-6'>{review}</div>
+							<div class='p-4 md:p-6'>{review}</div>
 						</li>
 					),
 				)
@@ -93,7 +95,7 @@ const testimonials: {
 
 	.carousel {
 		anchor-name: --carousel-anchor;
-		@apply flex gap-12 overflow-x-scroll scrollbar-none snap-x snap-mandatory scroll-smooth;
+		@apply flex gap-4 md:gap-12 overflow-x-scroll scrollbar-none snap-x snap-mandatory scroll-smooth;
 
 		&::scroll-button(*) {
 			@apply absolute btn bg-brand-primary shadow-panel p-2.5 size-12;
