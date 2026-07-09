@@ -48,7 +48,7 @@ const testimonials: {
 
 <section class='bg-brand-primary-01 sect' id='testimonials'>
 	<div class='sect-content text-center relative'>
-		<div>
+		<div class=''>
 			<h2 class='heading-1 text-brand-primary-07'>Testimonials</h2>
 			<p class='subtitle mt-3'>
 				What our clients are saying about our services
@@ -58,7 +58,7 @@ const testimonials: {
 			{
 				testimonials.map(
 					({ company, company_url, name, pfp, position, review }) => (
-						<li class='bg-brand-bright basis-17/20 max-w-75 md:max-w-none md:basis-98 shrink-0 snap-center shadow-card'>
+						<li class='bg-brand-bright basis-17/20 max-w-80 md:max-w-none md:basis-98 shrink-0 snap-center shadow-card'>
 							<div class='bg-brand-neutral-02 p-4 md:p-6 flex gap-4 md:gap-6'>
 								<span class='block size-20'>
 									<Image
@@ -95,7 +95,7 @@ const testimonials: {
 
 	.carousel {
 		anchor-name: --carousel-anchor;
-		@apply flex gap-4 md:gap-12 overflow-x-scroll scrollbar-none snap-x snap-mandatory scroll-smooth;
+		@apply flex gap-4 md:gap-12 overflow-x-scroll scrollbar-none snap-x snap-mandatory scroll-smooth relative w-dvw sm:w-auto right-3 sm:right-0 px-3 sm:px-0;
 
 		&::scroll-button(*) {
 			@apply absolute btn bg-brand-primary shadow-panel p-2.5 size-12;
